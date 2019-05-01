@@ -1,15 +1,17 @@
 import React from 'react';
 import "./App.scss";
 import { Container, Section } from 'rbx';
-
+import Header from "./components/header";
+ 
 const App = () => (
-    <div>
-        <Section>
-            <Container>
-                One Bit Food
+  <div>
+    <Header />
+    <Section>
+      <Container>
+        One Bit Food
       </Container>
-        </Section>
-    </div>
+    </Section>
+  </div>
 )
-
+ 
 export default App;
