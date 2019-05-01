@@ -1,5 +1,15 @@
 import React from 'react';
- 
-const App = () => <p>One Bit Food</p>
- 
+import "./App.scss";
+import { Container, Section } from 'rbx';
+
+const App = () => (
+    <div>
+        <Section>
+            <Container>
+                One Bit Food
+      </Container>
+        </Section>
+    </div>
+)
+
 export default App;
