@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
-import ListRestaurants from '../../components/list_restaurants';
-
+import ListRestaurants from "../../components/list_restaurants";
+import Categories from "../../components/categories"; 
+ 
 const Restaurants = () => (
-    <Fragment>
-        <ListRestaurants/>
-    </Fragment>
+  <Fragment>
+    <Categories />
+    <ListRestaurants />
+  </Fragment>
 );
-
+ 
 export default Restaurants;
