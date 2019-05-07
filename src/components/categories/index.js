@@ -13,41 +13,41 @@ import { loadRestaurants } from '../../actions/restaurant';
 
 
 class Categories extends Component {
-    state = {
-        categories: []
-    }
+  state = {
+    categories: []
+  }
 
-    filterByCategory = (category) => {
-        this.props.loadRestaurants(category)
-    }
+  filterByCategory = (category) => {
+    this.props.loadRestaurants(category)
+  }
 
-    componentWillMount() {
-        api.loadCategories().then(response => {
-            this.setState(() => ({ categories: response.data.categories }))
-        });
-    }
+  componentWillMount() {
+    api.loadCategories().then(response => {
+      this.setState(() => ({ categories: response.data.categories }))
+    });
+  }
 
-    render() {
-        return (
-            <Fragment>
-                <h3 className="title is-size-4">Categorias</h3>
-                <Box>
-                    <Slider {...slickSettings}>
-                        {this.state.categories.map((category, i) => {
-                            return (
-                                <a href="#" onClick={() => this.filterByCategory(category)}>
-                                    <div className="slider-item" key={i}>
-                                        <img src={category.image_url} alt="new" />
-                                        <span>{category.title}</span>
-                                    </div>
-                                </a>
-                            )
-                        })}
-                    </Slider>
-                </Box>
-            </Fragment>
-        )
-    }
+  render(){
+    return (
+      <Fragment>
+        <h3 className="title is-size-4">Categorias</h3>
+        <Box>
+          <Slider {...slickSettings}>
+            {this.state.categories.map((category, i) => {
+              return (
+                <a href="#" onClick={() => this.filterByCategory(category)}>
+                  <div className="slider-item" key={i}>
+                    <img src={category.image_url} alt="new"/>
+                    <span>{category.title}</span>
+                  </div>
+                </a>
+              )
+            })}
+          </Slider>
+        </Box>
+      </Fragment>
+    )
+  }
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({ loadRestaurants }, dispatch);
